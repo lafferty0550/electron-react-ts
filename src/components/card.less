@@ -1,0 +1,116 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #777;
+  border-radius: 5px;
+  box-shadow: 0 0 2px 1px #2e7d32;
+  width: 250px;
+  position: relative;
+
+  > svg {
+    margin: 10px 0;
+    width: 50px;
+    fill: #43a047;
+  }
+
+  &:hover .card-back {
+    opacity: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    visibility: visible;
+    cursor: auto;
+  }
+
+  &-back {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    background-color: #43a047;
+    transition: opacity .2s ease-in;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__button {
+      display: block;
+      margin: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      padding: 10px;
+      border: 1px solid white;
+      border-radius: 4px;
+      transition: background-color .1s linear, color .1s linear;
+      width: 150px;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+
+      &:hover {
+        background-color: white;
+        color: #43a047;
+      }
+    }
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  &__attributes {
+    width: 100%;
+
+    &-title {
+      font-size: 20px;
+      text-align: center;
+      padding-bottom: 5px;
+      border-bottom: 1px solid #43a047;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      margin-top: 10px;
+    }
+  }
+
+  &__attribute {
+    display: flex;
+
+    font-size: 18px;
+    width: 100%;
+    word-break: break-word;
+
+    &-key {
+      font-weight: 700;
+      padding-right: 10px;
+    }
+
+    > input {
+      display: inline-block;
+      border: none;
+      width: 45%;
+
+      &:focus {
+        border: 1px solid #43a047;
+      }
+    }
+  }
+}
+
+.attribute__remove {
+  width: 15px;
+  fill: red;
+  margin-left: 5px;
+}

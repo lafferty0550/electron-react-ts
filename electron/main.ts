@@ -1,6 +1,6 @@
 import {app, BrowserWindow} from 'electron';
-import * as path from 'path';
-import * as url from 'url';
+import path from 'path';
+import url from 'url';
 
 let mainWindow: Electron.BrowserWindow | null;
 
@@ -32,5 +32,7 @@ function createWindow() {
     });
 }
 
-app.on('ready', createWindow);
+app.on('ready', () => {
+    createWindow();
+});
 app.allowRendererProcessReuse = true;
