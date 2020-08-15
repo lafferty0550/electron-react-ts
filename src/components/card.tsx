@@ -1,9 +1,10 @@
 import React from 'react';
-import {Avatar} from './icons/avatar';
-
-import './card.less';
 import {Link} from 'react-router-dom';
+
+import {Avatar} from './icons/avatar';
 import {Attribute, AttributeChanges, Person} from '../store/types';
+import './card.less';
+
 import {Bin} from './bin';
 
 type Props = {

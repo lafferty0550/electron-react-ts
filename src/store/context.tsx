@@ -1,6 +1,5 @@
 import React, {createContext, ReducerAction, useReducer} from 'react';
 
-import {useSelectors} from './selectors';
 import {initialState, reducer} from './reducer';
 import {StorageState} from './types';
 import {useActions} from './actions';
@@ -30,9 +29,8 @@ export const StorageDispatchContext = createContext<StorageDispatchContext>(init
 
 export const StorageProvider: React.FC = ({children}) => {
     const [state, dispatch] = useReducer(reducer, initialState);
-    const selectors = useSelectors(state);
     const actions = useActions(state, dispatch);
-    const contextValue = {state: {...state}, actions: {...actions}, selectors: {...selectors}};
+    const contextValue = {state: {...state}, actions: {...actions}};
 
     return (
         <StorageContext.Provider value={contextValue}>

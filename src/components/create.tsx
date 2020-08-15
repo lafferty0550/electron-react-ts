@@ -4,7 +4,7 @@ import {Button} from './button';
 import {Card} from './card';
 import {Attribute, AttributeChanges, Attributes} from '../store/types';
 
-import './create-page.less';
+import './create.less';
 
 type Props = {
     attributes: Attributes,
@@ -16,7 +16,7 @@ type Props = {
     save: () => void
 };
 
-export const CreatePage = (({save, addAttribute, attributes, changeAttribute, removeAttribute}) => {
+export const Create = (({save, addAttribute, attributes, changeAttribute, removeAttribute}) => {
     const [key, setKey] = useState('');
     const [value, setValue] = useState('');
 
@@ -31,9 +31,8 @@ export const CreatePage = (({save, addAttribute, attributes, changeAttribute, re
             </div>
             <div className="create-page__actions">
                 <Button onClick={() => {
-                    if (key && value)
+                    if (key && value) {
                         addAttribute({key, value});
-                    if (!key && !value) {
                         setKey('');
                         setValue('');
                     }

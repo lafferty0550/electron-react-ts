@@ -1,8 +1,9 @@
-import {app, BrowserWindow} from 'electron';
-import path from 'path';
-import url from 'url';
+const electron = require('electron');
+const path = require('path');
 
-let mainWindow: Electron.BrowserWindow | null;
+const {app, BrowserWindow} = electron;
+
+let mainWindow;
 
 function createWindow() {
     mainWindow = new BrowserWindow({
@@ -14,17 +15,10 @@ function createWindow() {
     });
 
     mainWindow.webContents.openDevTools();
-
     if (process.env.NODE_ENV === 'development') {
         mainWindow.loadURL(`http://localhost:4000`);
     } else {
-        mainWindow.loadURL(
-            url.format({
-                pathname: path.join(__dirname, '../index.html'),
-                protocol: 'file:',
-                slashes: true
-            })
-        );
+        mainWindow.loadURL(`file://${path.join(path.resolve(), 'dist/renderer/index.html')}`);
     }
 
     mainWindow.on('closed', () => {

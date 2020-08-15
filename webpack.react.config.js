@@ -1,12 +1,17 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const _root = path.resolve();
+const _src = path.join(_root, '/src');
+const _output = path.join(_root, '/dist');
+
 module.exports = {
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
         mainFields: ['main', 'module', 'browser'],
     },
-    entry: './src/app.tsx',
+    context: _src,
+    entry: './app.tsx',
     target: 'web',
     devtool: 'source-map',
     module: {
@@ -25,7 +30,7 @@ module.exports = {
         ],
     },
     devServer: {
-        contentBase: path.join(__dirname, '../dist/renderer'),
+        contentBase: path.join(_output, 'renderer'),
         historyApiFallback: true,
         compress: true,
         hot: true,
@@ -33,11 +38,14 @@ module.exports = {
         publicPath: '/',
     },
     output: {
-        path: path.resolve(__dirname, '../dist/renderer'),
-        filename: 'js/[name].js',
+        path: path.resolve(_output, 'renderer'),
+        filename: '[hash].bundle.js',
         publicPath: './',
     },
     plugins: [
-        new HtmlWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            template: './index.html',
+            filename: './index.html'
+        }),
     ],
 };

@@ -3,7 +3,7 @@ import {useParams} from 'react-router-dom';
 
 import {StorageContext} from '../store/context';
 
-// take person id and get its info
+// take person id from url params and get its info
 export const useCurrent = () => {
     const {state, actions} = useContext(StorageContext);
     const [current, setCurrent] = useState(state.current);

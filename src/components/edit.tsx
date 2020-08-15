@@ -31,9 +31,8 @@ export const Edit = (({current, changeAttribute, addAttribute, removeAttribute, 
             </div>
             <div className="create-page__actions">
                 <Button onClick={() => {
-                    if (key && value)
+                    if (key && value) {
                         addAttribute({key, value});
-                    if (!key && !value) {
                         setKey('');
                         setValue('');
                     }

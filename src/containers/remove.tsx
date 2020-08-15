@@ -19,5 +19,4 @@ export const DeleteContainer = (() => {
 
     if (current)
         return <Delete current={current} accept={accept} cancel={() => setRedirect(true)}/>;
-    return null;
 }) as React.FC;

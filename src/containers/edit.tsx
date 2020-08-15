@@ -37,5 +37,4 @@ export const EditContainer = (() => {
         return <Edit current={current} changeAttribute={changeAttribute} addAttribute={addAttribute} save={save}
                      removeAttribute={removeAttribute}/>;
     }
-    return null;
 }) as React.FC;

@@ -1,7 +1,7 @@
 import React, {useContext, useState} from 'react';
 import {Redirect} from 'react-router-dom';
 
-import {CreatePage} from '../components/create-page';
+import {Create} from '../components/create';
 import {StorageContext} from '../store/context';
 import {Attribute, AttributeChanges, Attributes} from '../store/types';
 
@@ -32,6 +32,6 @@ export const CreatePageContainer = (() => {
     if (redirect)
         return <Redirect to='/list'/>;
 
-    return <CreatePage save={save} addAttribute={addAttribute} attributes={attributes} changeAttribute={changeAttribute}
-                       removeAttribute={removeAttribute}/>;
+    return <Create save={save} addAttribute={addAttribute} attributes={attributes} changeAttribute={changeAttribute}
+                   removeAttribute={removeAttribute}/>;
 }) as React.FC;

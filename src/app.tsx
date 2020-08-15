@@ -11,9 +11,6 @@ import {DeleteContainer} from './containers/remove';
 import {About} from './components/about';
 import {Login} from './components/login';
 
-const mainElement = document.createElement('div');
-document.body.appendChild(mainElement);
-
 import './index.less';
 import './app.less';
 
@@ -48,4 +45,4 @@ const App = () => {
     )
 }
 
-ReactDom.render(<Router><App/></Router>, mainElement);
+ReactDom.render(<Router><App/></Router>, document.getElementById('root'));

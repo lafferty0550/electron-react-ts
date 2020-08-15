@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 
-import './login.less';
 import {Button} from './button';
 import {ProgressBar} from './progress-bar';
+
+import './login.less';
 
 type Props = {
     login: () => void

@@ -57,7 +57,7 @@ export const About = (() => (
                 3. TypeScript
             </div>
             <div className='section__item'>
-                4. Webpack, gulp, ESLint, JEST
+                4. Webpack, gulp, ESLint
             </div>
             <div className='section__item'>
                 5. Nodejs, expressjs, mongoose, mongodb, JWT
@@ -98,7 +98,7 @@ export const About = (() => (
                 3. <b>Рабочий телефон</b>: +79203743727
             </div>
             <div className='section__item'>
-                4. <b>Почта</b>: lafferty@gmail.com
+                4. <b>Почта</b>: lafferty0550@gmail.com
             </div>
             <div className='section__item'>
                 5. <b>ВК</b>: <a href='https://vk.com/ilyamashinin'>Клоц</a>
