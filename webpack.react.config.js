@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const _root = path.resolve();
 const _src = path.join(_root, '/src');
-const _output = path.join(_root, '/dist');
+const _output = path.join(_root, '/public');
 
 module.exports = {
     resolve: {
