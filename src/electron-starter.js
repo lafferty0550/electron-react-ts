@@ -18,7 +18,7 @@ function createWindow() {
     if (process.env.NODE_ENV === 'development') {
         mainWindow.loadURL(`http://localhost:4000`);
     } else {
-        mainWindow.loadURL(`file://${path.join(path.resolve(), 'dist/renderer/index.html')}`);
+        mainWindow.loadURL(`file://${path.join(path.resolve(), 'renderer/index.html')}`);
     }
 
     mainWindow.on('closed', () => {
